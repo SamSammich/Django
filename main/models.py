@@ -8,8 +8,9 @@ class Student(models.Model):
     last_name = models.CharField(max_length=100, verbose_name='Last name')
     avatar = models.ImageField(upload_to='students/', verbose_name='Image', **NULLABLE)
 
+    is_active = models.BooleanField(default=True, verbose_name='Studying')
     def __str__(self):
-        return f'{self.first_name}{self.last_name}'
+        return f'{self.first_name} {self.last_name}'
 
     class Meta:
         verbose_name = 'student'
